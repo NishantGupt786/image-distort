@@ -146,12 +146,7 @@ const PixelImage = () => {
     containerElement.addEventListener("mouseenter", handleMouseEnter);
     containerElement.addEventListener("mouseleave", handleMouseLeave);
 
-    return () => {
-      containerElement.removeEventListener("mousemove", handleMouseMove);
-      containerElement.removeEventListener("mouseenter", handleMouseEnter);
-      containerElement.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
+  }, [imageRef.current]);
 
   return (
     <div id="imageContainer" ref={containerRef} className="filter-saturate-0 hover:filter-saturate-100">
